@@ -56,7 +56,16 @@ multiplyNums(10, 9, result => console.log(result));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  const listLC = list.map(each => each.toLowerCase());
+  const itemLC = item.toLowerCase();
+
+  if (listLC.includes(itemLC)) {
+    return cb(true);
+  }
+  return cb(false);
 }
+
+contains('pencil', items, result => console.log(result));
 
 /* STRETCH PROBLEM */
 
