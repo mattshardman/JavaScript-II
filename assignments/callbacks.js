@@ -20,14 +20,14 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   });
 
 
-
-
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
 
-getLength(items, length => console.log(length));
+getLength(items, function (length) {
+  console.log(length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
@@ -35,7 +35,9 @@ function last(arr, cb) {
   return cb(lastItem);
 }
 
-last(items, last => console.log(last));
+last(items, function(last) {
+  console.log(last);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -43,7 +45,9 @@ function sumNums(x, y, cb) {
   return cb(sum);
 }
 
-sumNums(122, 9, result => console.log(result));
+sumNums(122, 9, function(result) {
+  console.log(result);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -56,7 +60,9 @@ multiplyNums(10, 9, result => console.log(result));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  const listLC = list.map(each => each.toLowerCase());
+  const listLC = list.map(function (each) {
+    return each.toLowerCase();
+  });
   const itemLC = item.toLowerCase();
 
   if (listLC.includes(itemLC)) {
@@ -65,7 +71,9 @@ function contains(item, list, cb) {
   return cb(false);
 }
 
-contains('pencil', items, result => console.log(result));
+contains('pencil', items, function (result) {
+  console.log(result)
+});
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
