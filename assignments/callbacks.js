@@ -47,7 +47,11 @@ sumNums(122, 9, result => console.log(result));
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  const product = x * y;
+  return cb(product);
 }
+
+multiplyNums(10, 9, result => console.log(result));
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
