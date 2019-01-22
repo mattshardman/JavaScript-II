@@ -66,7 +66,6 @@ function contains(item, list, cb) {
 }
 
 contains('pencil', items, result => console.log(result));
-
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
