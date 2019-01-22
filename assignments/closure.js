@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function counterFunc(start, increment) {
+  let counter = start;
+  return function counterUp () {
+    const newCounter = counter += increment;
+    console.log(newCounter);
+    return newCounter;
+  }
+}
 
+const up = counterFunc(3, 2);
+up();
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
