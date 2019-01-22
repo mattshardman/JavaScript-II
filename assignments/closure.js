@@ -3,7 +3,6 @@
 function outer(data) {
   let counter = data;
   return function inner() {
-    console.log(data);
     return data;
   }
 }
@@ -16,7 +15,9 @@ const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
   return () => {
+    // ==> Not using ++ because: Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application.
     const newCounter = count += 1;
+    debugger;
     console.log(newCounter);
     return newCounter;
   }
