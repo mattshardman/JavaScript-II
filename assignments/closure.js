@@ -2,6 +2,7 @@
 // Write a simple closure of your own creation.  Keep it simple!
 function outer(data) {
   return function inner() {
+    console.log(data);
     return data;
   }
 }
@@ -33,7 +34,7 @@ const counterFactory = start => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-  let count = start;
+  let count = start || 0;
   return {
     increment() {
       const newCount = count += 1;
@@ -48,7 +49,7 @@ const counterFactory = start => {
   }
 };
 
-const counterChoice = counterFactory(7);
+const counterChoice = counterFactory();
 
 counterChoice.increment();
 counterChoice.decrement();
