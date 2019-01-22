@@ -1,7 +1,6 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 function outer(data) {
-  let counter = data;
   return function inner() {
     return data;
   }
@@ -17,7 +16,6 @@ const counter = () => {
   return () => {
     // ==> Not using ++ because: Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application.
     const newCounter = count += 1;
-    debugger;
     console.log(newCounter);
     return newCounter;
   }
